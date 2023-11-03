@@ -2,20 +2,7 @@
 <html>
 <head>
   <meta http-equiv="X-Frame-Options" content="ALLOW-FROM https://www.tutorialto.com https://example2.com">
-  </head>
-<body>
-<script>
-  const allowedDomains = ["https://www.tutorialto.com"];
-  const currentDomain = window.location.origin;
-
-  if (!allowedDomains.includes(currentDomain)) {
-    // Redirect or display a message on non-allowed domains
-    //window.location.href = "https://your-redirect-page.com";
-    // Or display a message to the user
-    document.body.innerHTML = "You can't Embed this content without permission. Contact at admin@tutorialto.com";
-  }
-</script>
-
+    <Content-Security-Policy frame-src domain1.com domain2.com></Content-Security-Policy>
 <script>//<![CDATA[
   const disabledKeys = ["c", "C", "x", "J", "u", "I"];
   const showAlert = e => {
@@ -58,6 +45,7 @@ var sv = getParam("sv");
 <script src="https://player.tutorialto.com/videojs-ie8.min.js"></script>
 <script src="https://player.tutorialto.com/video.js"></script>
 <script src="https://player.tutorialto.com/vjs-hls.min.js"></script>
+    </head>
 <body onload="init()">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
 <!-- Google tag (gtag.js) -->
@@ -120,14 +108,14 @@ var sv = getParam("sv");
     }
 </style>
   <script>
-    const allowedDomains = ["https://example1.com", "https://example2.com"];
+    const allowedDomains = ["https://tutorialto.com", "https://example2.com"];
     const currentDomain = window.location.origin;
   
     if (!allowedDomains.includes(currentDomain)) {
       // Redirect or display a message on non-allowed domains
-      window.location.href = "https://your-redirect-page.com";
+      //window.location.href = "https://your-redirect-page.com";
       // Or display a message to the user
-      // document.body.innerHTML = "This content cannot be embedded here.";
+      document.body.innerHTML = "This content cannot be embedded here.";
     }
   </script>
 </body>
