@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="Content-Security-Policy" content="frame-source tutorialto.com fitnessfeverzone.blogspot.com">
-  <Content-Security-Policy frame-src tutorialto.com fitnessfeverzone.blogspot.com></Content-Security-Policy>
 <script>//<![CDATA[
   const disabledKeys = ["c", "C", "x", "J", "u", "I"];
   const showAlert = e => {
@@ -123,16 +121,5 @@ if ((e.ctrlKey && disabledKeys.includes(e.key)) || e.key === "F12") {
         height: 100% !important;
     }
 </style>
-  <script>
-    const allowedDomains = ["https://tutorialto.com", "https://fitnessfeverzone.blogspot.com"];
-    const currentDomain = window.location.origin;
-  
-    if (!allowedDomains.includes(currentDomain)) {
-      // Redirect or display a message on non-allowed domains
-      //window.location.href = "https://your-redirect-page.com";
-      // Or display a message to the user
-      document.body.innerHTML = "This content cannot be embedded here.";
-    }
-  </script>
 </body>
 </html>
