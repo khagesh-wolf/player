@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-Frame-Options" content="ALLOW-FROM https://example1.com https://example2.com">
+  </head>
+<body>
 <script>
   const allowedDomains = ["https://www.tutorialto.com"];
   const currentDomain = window.location.origin;
@@ -113,4 +119,16 @@ var sv = getParam("sv");
         height: 100% !important;
     }
 </style>
+  <script>
+    const allowedDomains = ["https://example1.com", "https://example2.com"];
+    const currentDomain = window.location.origin;
+  
+    if (!allowedDomains.includes(currentDomain)) {
+      // Redirect or display a message on non-allowed domains
+      window.location.href = "https://your-redirect-page.com";
+      // Or display a message to the user
+      // document.body.innerHTML = "This content cannot be embedded here.";
+    }
+  </script>
 </body>
+</html>
