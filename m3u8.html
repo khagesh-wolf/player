@@ -34,13 +34,13 @@ function getParam ( sname )
 var sv = getParam("sv");
 </script>
 <title> Tutorial To m3u8 Player</title>
-<header set Content-Security-Policy "frame-src https://www.tutorialto.com https://fitnessfeverzone.blogspot.com"></header>
+<header set Content-Security-Policy "frame-src https://www.tutorialto.com "></header>
 <script>
     // Detect the domain of the website that is trying to embed your page
     var referrerDomain = document.referrer.split("/")[2];
 
     // Check if the referrer domain is in the list of allowed domains
-    var allowedDomains = ["tutorialto.com", "fitnessfeverzone.blogspot.com"];
+    var allowedDomains = ["tutorialto.com"];
     if (!allowedDomains.includes(referrerDomain)) {
       // Prevent the page from being embedded
       document.body.innerHTML = "This page cannot be embedded here.";
