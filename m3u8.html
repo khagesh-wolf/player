@@ -1,3 +1,19 @@
+<?php
+
+// Get the domain of the website that is trying to embed the page
+$referrerDomain = $_SERVER['HTTP_REFERER'];
+
+// Check if the referrer domain is in the list of allowed domains
+$allowedDomains = array('tutorialto.com', 'domain2.com');
+if (!in_array($referrerDomain, $allowedDomains)) {
+    // Prevent the page from being embedded
+    header('Content-Type: text/html');
+    echo 'This page cannot be embedded here.';
+    exit;
+}
+
+// Display the page
+?>
 <script>//<![CDATA[
   const disabledKeys = ["c", "C", "x", "J", "u", "I"];
   const showAlert = e => {
