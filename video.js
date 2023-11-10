@@ -5207,7 +5207,7 @@
     
         this.contentEl_ = Dom.createEl('div', {
           className: 'vjs-live-display',
-          innerHTML: '<span class="vjs-control-text">' + this.localize('Stream Type') + '</span>' + this.localize('LIVE')
+          innerHTML: '<span class="vjs-control-text">' + this.localize('Stream Type') + '</span>' + this.localize('TutorialTo.com')
         }, {
           'aria-live': 'off'
         });
