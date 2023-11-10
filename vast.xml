@@ -1,0 +1,25 @@
+<VAST version="3.0">
+   <Ad id="custom-image-ad">
+      <Wrapper>
+         <AdSystem>Custom Ad</AdSystem>
+         <VASTAdTagURI>https://cdn.statically.io/gh/khagesh-wolf/icon-tutorialtotv/main/Download-Our-App-Tutorial-To.png</VASTAdTagURI>
+         <Impression id="custom-image-impression">
+            <![CDATA[Impression_Tracking_URL]]>
+         </Impression>
+         <Creatives>
+            <Creative id="custom-image-creative">
+               <Linear>
+                  <MediaFiles>
+                     <MediaFile id="custom-image" delivery="progressive" type="image/jpeg" width="640" height="480">
+                        <![CDATA[https://cdn.statically.io/gh/khagesh-wolf/icon-tutorialtotv/main/Download-Our-App-Tutorial-To.png]]>
+                     </MediaFile>
+                  </MediaFiles>
+                  <ClickThrough>
+                     <![CDATA[https://www.upload-apk.com/HfSOHsGMho5JIfH]]>
+                  </ClickThrough>
+               </Linear>
+            </Creative>
+         </Creatives>
+      </Wrapper>
+   </Ad>
+</VAST>
