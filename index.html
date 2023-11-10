@@ -1,8 +1,6 @@
 <html>
-<script src="//content.jwplatform.com/libraries/IDzF9Zmk.js"></script>
-  <script type="text/javascript">
-    jwplayer.key = 'ypdL3Acgwp4Uh2/LDE9dYh3W/EPwDMuA2yid4ytssfI=';
-  </script>
+<script src="/jwplyr.js"></script>
+
   <style>
     #container {
       margin: 0;
@@ -45,16 +43,7 @@
   </style>
     <iframe id="iframe" allowfullscreen="allowfullscreen" allowtransparency="true" frameborder="0" height="100%" marginheight="0" marginwidth="0" scrolling="no" sandbox="allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation" src="" width="100%"></iframe>
     <div id="jwPlayer"></div>
-    <a href="https://www.tutorialto.com/" target="_blank"><span style=" position: fixed;
-  border: 0;
-  left: 0;
-  width: 100%;
-  color: #fff;
-  bottom: 120px;
-  text-align: center;
-  font-family: Raleway;
-  font-size: 20px;
-  z-index: 9999;color: #00f7ff;"> www.TutorialTo.com</span></a>
+    <div id="jwplayers"></div>
   <script>
     // Get the `src` parameter from the URL.
     const urlParams = new URLSearchParams(window.location.search);
@@ -69,30 +58,6 @@
       // Show the JW Player
       jwplayer("jwPlayer").setup({
         file: videoUrl,
-        autostart: 'true',
-        image: '//blogger.googleusercontent.com/img/a/AVvXsEizS5eN_btZr6uX9NEPyho9fPJs9hyVJDAhijQp-8AEvaVzwZlFl7z8VNEMu_EfQ_r5vmg_cZQaxE_1xjYRXp3YZTSZYiLu04pjT2h_HyUgeaJPGt_j4fP4WmJQhejNNtu7fHlmEncDIdBnflqXU3phZg8jyF_agsVz_rCJ7d5OTQmXLSax1UJeTtCXeFY',
-        primary: 'html5',
-        hlshtml: 'true',
-        aspectratio: '16:9',
-        repeat: 'true',
-        setFullscreen: true,
-        controls: true,
-        showCode: true,
-        responsive: true,
-        abouttext: "Tutorial To",
-        aboutlink: "https://www.tutorialto.com/",
-        logo: {
-          file: "//blogger.googleusercontent.com/img/a/AVvXsEizS5eN_btZr6uX9NEPyho9fPJs9hyVJDAhijQp-8AEvaVzwZlFl7z8VNEMu_EfQ_r5vmg_cZQaxE_1xjYRXp3YZTSZYiLu04pjT2h_HyUgeaJPGt_j4fP4WmJQhejNNtu7fHlmEncDIdBnflqXU3phZg8jyF_agsVz_rCJ7d5OTQmXLSax1UJeTtCXeFY",
-          link: "//www.tutorialto.com/",
-          position: "top-right",
-          margin: "25",
-        },
-        skin: {
-          name: "glow",
-          active: "red",
-          inactive: "",
-          background: "",
-        }
       });
       document.getElementById('iframe').style.display = 'none';
     }
