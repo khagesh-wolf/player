@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/crichd.css" rel="stylesheet">
+
+    <title>CricHD Player</title>
+  
+</head>
+<body>
+
+<div id="player-container">
+    <iframe id="player-iframe" allowfullscreen></iframe>
+      <div id="text">www.tutorialto.com</div>
+
+</div>
+
+<script>
+    // Get the Custom_ID from the URL parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const customID = urlParams.get('id');
+
+    // Replace (Custom_ID) in the original URL with the custom ID
+    const originalURL = `https://bigcast.xyz/embed.php?v=${customID}`;
+
+    // Set the iframe source to the modified URL
+    document.getElementById('player-iframe').src = originalURL;
+</script>
+
+</body>
+</html>
