@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet" />
+    <title>Tutorial To Match Generator</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+</head>
+<body class="container">
+    <nav class="navbar navbar-expand-mdo bg-dark navbar-dark px-2">
+            <a class="navbar-brand">Tutorial To Live</a>
+    </nav>
+
+    <div class="section" id="Blog">
+        <div class="widget Blog" data-version="1" id="Blog1">
+            <link href="/match/style.css" rel="stylesheet" />
+            <div class="containerd mt-5">
+                <div class="card text-center my-3 bg-darkc text-whitec">
+                    <div class="card-header card-header border-0">
+                        <div id="preview">
+                            <div id="preview" class="text-darkc">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <form class="rosw">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="awayTeam">Home Team Name:
+                                            <span class="text-danger" type="button" data-toggle="modal"
+                                                data-target="#addTeamModal">Add Team</span></label>
+                                        <select class="form-control select2" id="awayTeam" name="awayTeam"></select>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="homeTeam">Away Team Name:
+                                            <span class="text-danger" type="button" data-toggle="modal"
+                                                data-target="#addTeamModal">Add Team</span></label>
+                                        <div class="input-group">
+                                            <select class="form-control select2" id="homeTeam" name="homeTeam"></select>
+                                            <div class="input-group-append"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="matchStart">Match Start Date-Time:</label>
+                                        <input type="datetime-local" class="form-control" id="matchStart"
+                                            name="matchStart" onchange="updateMatchEnd()" />
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="matchEnd">Match End Date-Time:</label>
+                                        <input type="datetime-local" class="form-control" id="matchEnd"
+                                            name="matchEnd" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="leagueName">League Name:
+                                            <span type="button" class="text-danger" data-toggle="modal"
+                                                data-target="#addLeagueModal">Add League</span></label>
+                                        <select class="form-control select2" id="leagueName" name="leagueName"></select>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="matchResult">Match Result:</label>
+                                        <input type="text" class="form-control" id="matchResult" name="matchResult" />
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="row">
+                            <div class="form-group">
+                                <label for="postLink"><b>Post Link on Your Site:</b>
+                                    <span type="button" class="text-danger d-none" data-toggle="modal"
+                                        data-target="#blogIdModal">Add Blogid</span>
+                                </label>
+                                <input type="text" class="form-control" id="postLink" name="postLink" />
+                            </div>
+                        </form>
+                    </div>
+                    <p bis_skin_checked="1" class="notice" id="notice" style="background: rgb(210, 0, 44);border-radius: 0px;border: 0.01pc solid rgb(0, 52, 70);box-sizing: border-box;color: #003446;font-family: Raleway, Arial, sans-serif;font-size: 1pc;list-style: none;margin: 0.275pc;outline: none;overflow: hidden;padding: 0.2pc;text-align: center;vertical-align: baseline;">
+                    <b style="background: 0px 0px;border: 0px;box-sizing: border-box;list-style: none;margin: 0px;outline: none;padding: 0px;vertical-align: baseline;">
+                    <a href="" style="background: 0px 0px;border: 0px;box-sizing: border-box;color: white;margin: 0px;outline: none;padding: 0px;text-decoration-line: none;transition: all 0s ease 0s;vertical-align: baseline;" target="">Refresh Page - Generate New Match</a></b></p>
+                    <div class="card-footer">
+                        <div class="form-group my-3">
+                            <label for="exampleFormControlTextarea1">Code:</label>
+                            <textarea id="code" onclick="select()" class="form-control" id="exampleFormControlTextarea1"
+                                rows="3"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="addTeamModal" tabindex="-1" role="dialog" aria-labelledby="addTeamModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="addTeamModalLabel">Add New Team</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="alert alert-primary" role="alert">
+                                Enter Team Details
+                            </div>
+                            <form id="newTeamForm">
+                                <div class="form-group">
+                                    <label for="newTeamName">Team Name:</label>
+                                    <input type="text" class="form-control" id="newTeamName" name="newTeamName" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="newTeamLogo">Team Logo URL:</label>
+                                    <input type="url" class="form-control" id="newTeamLogo" name="newTeamLogo" />
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                Close
+                            </button>
+                            <button type="button" class="btn btn-primary" id="saveTeamButton">
+                                Save
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="addLeagueModal" tabindex="-1" role="dialog"
+                aria-labelledby="addLeagueModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="addLeagueModalLabel">
+                                Add New League
+                            </h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="alert alert-primary" role="alert">
+                                Data saved in your pc
+                            </div>
+                            <form id="newLeagueForm">
+                                <div class="form-group">
+                                    <label for="newLeagueName">League Name:</label>
+                                    <input type="text" class="form-control" id="newLeagueName" name="newLeagueName" />
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                Close
+                            </button>
+                            <button type="button" class="btn btn-primary" id="saveLeagueButton">
+                                Save
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+            <script src="/match/match.js"></script>
+        </div>
+    </div>
+</body>
+</html>
