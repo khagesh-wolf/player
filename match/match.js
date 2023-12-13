@@ -850,7 +850,7 @@ $(document).ready(function () {
 
     function formatISODateTime(dateTime) {
         const offset = new Date().getTimezoneOffset();
-        const offsetHours = Math.abs(Math.floor(offset / 60));
+        const offsetHours = Math.abs(Math.floor(offset / 70));
         const offsetMinutes = Math.abs(offset % 60);
         const offsetSign = offset >= 0 ? '-' : '+';
         const formattedOffset = `${offsetSign}${offsetHours.toString().padStart(2, '0')}:${offsetMinutes.toString().padStart(2, '0')}`;
