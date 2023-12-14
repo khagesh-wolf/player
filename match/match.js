@@ -906,7 +906,6 @@ $(document).ready(function () {
         </div>
         <div class="match-time">
             <div class="match-timing matchc-${randomNumbers}">
-                <div id="match-hour"></div>
                 <div id="result-now">${matchResultValue}</div>
                 <span class="match-date" data-start="${formattedMatchStart}" data-gameends="${formattedMatchEnd}" id="countdownClock" ></span>📅<span class="eventDateInKathmandu"></span>
             </div>
@@ -977,7 +976,7 @@ $(document).ready(function () {
         const previewHtml =
 
             `<!-- ${homeTeamSelectValue} vs ${awayTeamSelectValue} Start--> 
-<div class="match-event" id="tt${randomNumbers}s" data-result="vs"> <a href="${postLinkValue}" title="${homeTeamSelectValue} vs ${awayTeamSelectValue}" > <div id="overlay-match"> <div id="watch-match"></div> </div> <div class="first-team"> <div class="team-logo"> <img loading="lazy" alt="${homeTeamSelectValue}" height="70" src="${homeTeam.logo}" title="${homeTeamSelectValue}" width="70"> </div> <div class="team-name">${homeTeamSelectValue}</div> </div> <div class="match-time" > <div class="match-timing"> <div id="match-hour"></div> <div id="result-now">${matchResultValue}</div> <span id="mj${randomNumbers}s" class="match-date" data-start="${formattedMatchStart}" data-gameends="${formattedMatchEnd}"></span>📅
+<div class="match-event" id="tt${randomNumbers}s" data-result="vs"> <a href="${postLinkValue}" title="${homeTeamSelectValue} vs ${awayTeamSelectValue}" > <div id="overlay-match"> <div id="watch-match"></div> </div> <div class="first-team"> <div class="team-logo"> <img loading="lazy" alt="${homeTeamSelectValue}" height="70" src="${homeTeam.logo}" title="${homeTeamSelectValue}" width="70"> </div> <div class="team-name">${homeTeamSelectValue}</div> </div> <div class="match-time" > <div class="match-timing"> <div id="result-now">${matchResultValue}</div> <span id="mj${randomNumbers}s" class="match-date" data-start="${formattedMatchStart}" data-gameends="${formattedMatchEnd}"></span>📅
 <span class="eventDateInKathmandu"></span> </div> </div> <div class="left-team"> <div class="team-logo"> <img loading="lazy" alt="${awayTeamSelectValue}" height="70" src="${awayTeam.logo}" title="${awayTeamSelectValue}" width="70"> </div> <div class="team-name">${awayTeamSelectValue}</div></div><div class="match-info"><ul><li class="leaguename"><span><strong>${leagueNameSelectValue}</strong></span></li></ul></div></a></div>
 <!-- ${homeTeamSelectValue} vs ${awayTeamSelectValue} End-->`;
 
