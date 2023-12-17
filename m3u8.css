@@ -1,0 +1,15 @@
+.video-js {
+    width: 100%;
+    height: 100%;
+}
+body {
+    text-align: center;
+    margin: 0px;
+}
+#videojs {
+    width: 100%;
+    height: 100%;
+}.streaming-dimensions{
+            width: 100% !important;
+    height: 100% !important;
+}
