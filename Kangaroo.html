@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kangaroo Video Player</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            padding: 5px;
+            font-size: 14px;
+        }
+
+        button {
+            padding: 8px 15px;
+            font-size: 14px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        iframe {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <label for="midInput">Enter Custom MID Value:</label>
+    <input type="text" id="midInput" placeholder="Enter MID value">
+    <button onclick="updateMid()">Play Video</button>
+    <button onclick="copyUrl()">Click to Copy URL</button>
+    <br>
+    <iframe id="videoPlayer"
+            src="https://player.huminbird.cn/detail.html?v=102&mid=YOUR_CUSTOM_MID_VALUE&type=1&pid=6&isTips=1&isLogin=0&sbtcolor=4368fe&pfont=90px" 
+            width="100%" 
+            height="490" 
+            frameborder="0" 
+            allowfullscreen="true">
+    </iframe>
+
+    <script>
+        function updateMid() {
+            var customMidValue = document.getElementById("midInput").value;
+            var videoPlayerIframe = document.getElementById("videoPlayer");
+            var newSrc = "https://player.huminbird.cn/detail.html?v=102&mid=" + customMidValue + "&type=1&pid=7&isTips=1&isLogin=0&sbtcolor=4368fe&pfont=70px";
+            videoPlayerIframe.src = newSrc;
+        }
+
+        function copyUrl() {
+            var videoPlayerIframe = document.getElementById("videoPlayer");
+            var finalUrl = videoPlayerIframe.src;
+
+            var tempInput = document.createElement("input");
+            document.body.appendChild(tempInput);
+            tempInput.setAttribute("value", finalUrl);
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+
+            alert("URL copied to clipboard: " + finalUrl);
+        }
+    </script>
+</body>
+</html>
